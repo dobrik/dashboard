@@ -1,0 +1,11 @@
+img.preview{
+    height: 50px;
+    width: auto;
+    transition: 1s;
+}
+img.imgBig{
+    height: 350px; !important;
+}
+img.preview:hover{
+    cursor: pointer;
+}
