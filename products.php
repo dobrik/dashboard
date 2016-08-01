@@ -19,7 +19,7 @@ if ($link->error) {
 } ?>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-2" id="menu-container">
             <span class="glyphicon glyphicon-arrow-left pull-right" id="menu">asda</span>
             <div class="container-fluid">Menu</div>
         </div>

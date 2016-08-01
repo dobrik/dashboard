@@ -9,3 +9,6 @@ img.imgBig{
 img.preview:hover{
     cursor: pointer;
 }
+#menu-container{
+    transition: 1s;
+}

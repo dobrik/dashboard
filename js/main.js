@@ -6,5 +6,5 @@ $('img.preview').click(function () {
     }
 });
 $('#menu').click(function () {
-
+    console.log($(this).parent().css({'margin-left':'-12%'}));
 });
