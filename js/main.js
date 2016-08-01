@@ -4,4 +4,7 @@ $('img.preview').click(function () {
     } else {
         $(this).addClass('imgBig');
     }
-})
+});
+$('#menu').click(function () {
+
+});

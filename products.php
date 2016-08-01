@@ -20,7 +20,7 @@ if ($link->error) {
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-2">
-            <span class="glyphicon glyphicon-arrow-left pull-right">asda</span>
+            <span class="glyphicon glyphicon-arrow-left pull-right" id="menu">asda</span>
             <div class="container-fluid">Menu</div>
         </div>
         <div class="col-md-10">
@@ -55,7 +55,7 @@ if ($link->error) {
         </div>
     </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="js/jquery2.2.4.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/main.js"></script>
 </body>
