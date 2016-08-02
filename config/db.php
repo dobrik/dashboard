@@ -7,6 +7,7 @@
  */
 $config = parse_ini_file('config.ini');
 $link = new mysqli($config['host'], $config['user'], $config['pass'], $config['db']);
+$link->set_charset("utf8");
 if ($link->error) {
     echo 'Mysql error: ' . $link->error;
     exit();

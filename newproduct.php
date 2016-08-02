@@ -46,14 +46,15 @@ VALUES ('{$_POST['name']}', '{$_POST['description']}', '{$_POST['content']}', '{
                 }
                 ?>
             </select>
-            <input type="file" name="img">
-            <input type="submit" name="submit">
-            <!--            <button class="btn btn-success form-control" value="send" name="submit"><span class="glyphicon glyphicon-plus-sign"></span>Добавить-->
-            <!--            </button>-->
+            <input type="file" name="img" id="img">
+            <div id="preview"></div>
+                        <button class="btn btn-success form-control" value="send" name="submit"><span class="glyphicon glyphicon-plus-sign"></span>Добавить
+                        </button>
         </form>
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="js/bootstrap.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

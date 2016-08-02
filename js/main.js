@@ -23,3 +23,13 @@ $('#menu').click(function () {
         thisBlock.next().addClass('mini-right');
     }
 });
+$('#img').change(function(e){
+    var img = new Image(300);
+    var reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0]);
+    reader.onload = function(){
+        img.src = reader.result;
+    };
+    $('#preview').append(img);
+
+});
