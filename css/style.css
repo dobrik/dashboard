@@ -9,6 +9,13 @@ img.imgBig{
 img.preview:hover{
     cursor: pointer;
 }
-#menu-container{
+.transition{
     transition: 1s;
+}
+.mini-left{
+    margin-left: -12%;
+}
+.mini-right{
+    margin-right: -8%;
+    width: 95%;
 }

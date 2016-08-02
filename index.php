@@ -11,7 +11,9 @@
 <?php
 
 include_once 'config/db.php';
-
+if(!empty($_POST['remove'])){
+    $link->query("DELETE FROM products WHERE id={$_POST['remove']}");
+}
 $query = $link->query("SELECT p.id, product, description, content, price, preview, `count`, category FROM products p JOIN categories c ON p.category_id=c.id");
 if ($link->error) {
     echo 'Mysql error: ' . $link->error;
@@ -19,11 +21,15 @@ if ($link->error) {
 } ?>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-2" id="menu-container">
-            <span class="glyphicon glyphicon-arrow-left pull-right" id="menu">asda</span>
-            <div class="container-fluid">Menu</div>
+        <div class="col-md-2 transition">
+            <span class="glyphicon glyphicon-arrow-left pull-right" id="menu"></span>
+
+            <div class="container-fluid pull-left">
+                <div><a href="newproduct.php">Добавить товар</a></div>
+                <div></div>
+            </div>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-10 transition">
             <table class="table table-striped table-bordered">
                 <tr>
                     <th>id</th>
@@ -34,6 +40,7 @@ if ($link->error) {
                     <th>image</th>
                     <th>count</th>
                     <th>category</th>
+                    <th>delete</th>
                 </tr>
                 <?php
                 while ($row = $query->fetch_assoc()) {
@@ -47,6 +54,10 @@ if ($link->error) {
                         <td><img class="preview" src="<?php echo $row['preview'] ?>" alt=""></td>
                         <td><?php echo $row['count'] ?></td>
                         <td><?php echo $row['category'] ?></td>
+                        <td>
+                            <form action="?" method="post">
+                                <button name="remove" value="<?php echo $row['id']?>" class="glyphicon glyphicon-remove"></button>
+                            </form></td>
                     </tr>
                     <?php
                 }

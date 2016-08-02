@@ -6,5 +6,20 @@ $('img.preview').click(function () {
     }
 });
 $('#menu').click(function () {
-    console.log($(this).parent().css({'margin-left':'-12%'}));
+    var thisBlock = $(this).parent();
+    if (thisBlock.hasClass('mini-left')) {
+        $(this).removeClass('glyphicon-arrow-right');
+        $(this).addClass('glyphicon-arrow-left');
+        thisBlock.removeClass('mini-left');
+        thisBlock.next().removeClass('col-md-12');
+        thisBlock.next().addClass('col-md-10');
+        thisBlock.next().removeClass('mini-right');
+    } else {
+        $(this).removeClass('glyphicon-arrow-left');
+        $(this).addClass('glyphicon-arrow-right');
+        thisBlock.addClass('mini-left');
+        thisBlock.next().removeClass('col-md-10');
+        thisBlock.next().addClass('col-md-12');
+        thisBlock.next().addClass('mini-right');
+    }
 });
