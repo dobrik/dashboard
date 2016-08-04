@@ -19,6 +19,7 @@ if ($link->error) {
     echo 'Mysql error: ' . $link->error;
     exit();
 } ?>
+<div id="debug"></div>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-2 transition">
@@ -46,17 +47,17 @@ if ($link->error) {
                 while ($row = $query->fetch_assoc()) {
                     ?>
                     <tr>
-                        <td><?php echo $row['id'] ?></td>
-                        <td><?php echo $row['product'] ?></td>
-                        <td><?php echo $row['description'] ?></td>
-                        <td><?php echo $row['content'] ?></td>
-                        <td><?php echo $row['price'] ?></td>
+                        <td><span class="id_product"></span><?php echo $row['id'] ?></td>
+                        <td><span class="product_product" data-id="<?php echo $row['id'] ?>"><?php echo $row['product'] ?></span></td>
+                        <td><span class="product_description" data-id="<?php echo $row['id'] ?>"><?php echo $row['description'] ?></span></td>
+                        <td><span class="product_content" data-id="<?php echo $row['id'] ?>"><?php echo $row['content'] ?></span></td>
+                        <td><span class="product_price" data-id="<?php echo $row['id'] ?>"><?php echo $row['price'] ?></span></td>
                         <td><img class="preview" src="<?php echo $row['preview'] ?>" alt=""></td>
-                        <td><?php echo $row['count'] ?></td>
-                        <td><?php echo $row['category'] ?></td>
+                        <td><span class="product_count" data-id="<?php echo $row['id'] ?>"><?php echo $row['count'] ?></span></td>
+                        <td><span class="product_category" data-id="<?php echo $row['id'] ?>"><?php echo $row['category'] ?></span></td>
                         <td>
                             <form action="?" method="post">
-                                <button name="remove" value="<?php echo $row['id']?>" class="glyphicon glyphicon-remove"></button>
+                                <button name="remove" value="<?php echo $row['id']?>" class="btn btn-danger btn-sm glyphicon glyphicon-remove"></button>
                             </form></td>
                     </tr>
                     <?php
@@ -69,5 +70,6 @@ if ($link->error) {
 <script src="js/jquery2.2.4.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/main.js"></script>
+<script src="js/ajax.js"></script>
 </body>
 </html>
